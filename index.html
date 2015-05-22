@@ -3,22 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Angular Rails app</title>
-  <script src="/client/bower_components/angular/angular.js"></script>
-  <script src="app.js"></script>
+  <link rel="stylesheet" href="client/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="client/bower_components/components-font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="client/bower_components/jquery/dist/jquery.js"></script>
+  <style> .glyphicon-thumbs-up {
+    cursor: pointer
+  }
+  </style>
 </head>
 <body ng-app="quoraClone" ng-controller="MainCtrl">
-<div ng-repeat="post in posts | orderBy: 'upvotes'">{{post.title}} - upvotes: {{post.upvotes}}
 
-  <a ng-show="post.link" href="{{post.link}}">{{post.title}}</a>
-  <span ng-hide="post.link">{{post.title}}</span>
-  <span ng-click="incrementUpvotes(post)">Up</span>
-  <span ng-click="decrementDownvotes(post)">Down</span>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="page-header">
+        <h3>Quora clone</h3>
+      </div>
+      <div ng-repeat="post in posts | orderBy: 'upvotes'">{{post.title}} - upvotes: {{post.upvotes}}
+
+        <a ng-show="post.link" href="{{post.link}}">{{post.title}}</a>
+        <span ng-hide="post.link">{{post.title}}</span>
+        <span ng-click="incrementUpvotes(post)">Up</span>
+        <span ng-click="decrementDownvotes(post)">Down</span>
+      </div>
+
+
+
+    </div><!--col-md-6 -->
+  </div>
 </div>
+
 
 <form ng-submit="addPost()">
   <input type="text" ng-model="title" /><br>
   <input typee="text" ng-model="link" /><br>
   <button type="submit">Post</button>
 </form>
+
+
+<script src="/client/bower_components/angular/angular.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
