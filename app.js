@@ -19,5 +19,8 @@ angular.module('quoraClone', [])
 		};
 		$scope.incrementUpvotes = function (post) {
 			post.upvotes += 1;
+		};
+		$scope.decrementDownvotes = function (post) {
+			post.upvotes -= 1;
 		}
 		}]);
