@@ -36,9 +36,14 @@
 
 
 <form ng-submit="addPost()">
-  <input type="text" ng-model="title" /><br>
-  <input typee="text" ng-model="link" /><br>
-  <button type="submit">Post</button>
+  <div class="form-group">
+    <input type="text" ng-model="title" class="form-control" placeholder="title"/>
+  </div>
+  <div class="form-group">
+    <input typee="text" ng-model="link" class="form-control" placeholder="link"/>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Post</button>
 </form>
 
 
